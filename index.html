@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculadora de IMC</title>
+  </head>
+  <body>
+    <h1>Cálculo do IMC</h1>
+    <p>Nome:</p>
+    <input type="text" id="nome">
+    <br>
+    <p>Altura (em metros):<p>
+    <input type="number" id="altura" step="0.01">
+    <br>
+    <p>Peso (em kg):</p>
+    <input type="number" id="peso">
+    <br>
+    <button onclick="calcularIMC()">Calcular IMC</button>
+    <br>
+    <p id="resultado"></p>
+    <script>
+      function calcularIMC() {
+        const nome = document.getElementById("nome").value;
+        const altura = parseFloat(document.getElementById("altura").value);
+        const peso = parseFloat(document.getElementById("peso").value);
+        const imc = peso / (altura * altura);
+        const resultado = document.getElementById("resultado");
+        resultado.textContent = "Olá " + nome + ", seu IMC é: " + imc.toFixed(2);
+      }
+    </script>
+  </body>
+</html>
